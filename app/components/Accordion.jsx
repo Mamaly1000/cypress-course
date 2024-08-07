@@ -1,32 +1,38 @@
-import * as React from 'react';
-import Accordion from '@mui/material/Accordion';
-import AccordionSummary from '@mui/material/AccordionSummary';
-import AccordionDetails from '@mui/material/AccordionDetails';
-import Typography from '@mui/material/Typography';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import * as React from "react";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
-export default function ItemsAccordion({items}) {
+export default function ItemsAccordion({ items }) {
   return (
-    <div style={{maxWidth: '70vw', minWidth: '50vw'}}>
-        {
-            items.map((item) => {
-                return (
-                <Accordion key={item.id}>
-                    <AccordionSummary
-                      expandIcon={<ExpandMoreIcon />}
-                      id="panel1a-header"
-                    >
-                      <Typography>{item.summary}</Typography>
-                    </AccordionSummary>
-                    <AccordionDetails>
-                      <Typography>
-                        {item.details}
-                      </Typography>
-                    </AccordionDetails>
-                </Accordion>
-                )
-            })
-        }
+    <div style={{ maxWidth: "70vw", minWidth: "50vw" }}>
+      {items.map((item) => {
+        return (
+          <Accordion
+            sx={{
+              background: "#000",
+              color: "#f2f2f2",
+              borderColor: "#f2f2f2",
+            }}
+            variant="outlined"
+            className="dark"
+            key={item.id}
+            data-test={`accordian-item-${item.id}`}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              id="panel1a-header"
+            >
+              <Typography>{item.summary}</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography>{item.details}</Typography>
+            </AccordionDetails>
+          </Accordion>
+        );
+      })}
     </div>
   );
 }
