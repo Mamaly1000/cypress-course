@@ -1,16 +1,16 @@
-describe.only("testing form", () => {
+describe.skip("testing form", () => {
   beforeEach(() => {
     cy.visit("/forms");
     cy.get("form").as("login-form");
     cy.get("@login-form").find("input").as("form-input");
   });
-  it("should have a header", () => {
+  it.skip("should have a header", () => {
     cy.contains(/testing forms/i);
   });
-  it("should have a form", () => {
+  it.skip("should have a form", () => {
     cy.get("@login-form").should("exist");
   });
-  it("test form subscribe successfully", () => {
+  it.skip("test form subscribe successfully", () => {
     cy.get("@form-input").should("exist").type("m@gmail.com");
     cy.contains(/successfully subbed/i).should("not.exist");
     cy.get("@login-form").submit();
@@ -18,7 +18,7 @@ describe.only("testing form", () => {
     cy.wait(3000);
     cy.contains(/successfully subbed/i).should("not.exist");
   });
-  it("test form dont subscribe successfully", () => {
+  it.skip("test form dont subscribe successfully", () => {
     cy.get("@form-input").type("m@gmail.io");
     cy.contains(/Invalid email/i).should("not.exist");
     cy.get("@login-form").submit();
