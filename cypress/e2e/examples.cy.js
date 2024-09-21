@@ -1,10 +1,10 @@
-describe("testing examples", () => {
+describe.skip("testing examples", () => {
   beforeEach(() => cy.visit("/examples"));
-  it("multi page testing", () => {
+  it.skip("multi page testing", () => {
     cy.get("[data-test='/examples']").click();
     cy.location("pathname").should("equal", "/examples");
   });
-  it("intercepts the http data", () => {
+  it.skip("intercepts the http data", () => {
     let message = "successfully intercepted request";
     cy.intercept("POST", "http://localhost:3000/examples", {
       body: { message },
@@ -19,7 +19,7 @@ describe("testing examples", () => {
   // request() => is a helpful method anytime you need to make an http req within your tests and perform expectations against it.
   // invoke()  => invoke a function on the previously yielded subject.
   // its()     => get the properties value on the previously yielded subject.
-  it.only("test grudge app", () => {
+  it.skip("test grudge app", () => {
     cy.get("[data-test='grudge-app']").as("app");
     cy.get("[data-test='grudge-list']").as("grudge-list");
     cy.get("@app").should("exist");

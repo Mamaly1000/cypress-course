@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "next lint",
     "cy:open": "cypress open",
-    "e2e:chrome": "cypress run --browser chrome"
+    "e2e:chrome": "cypress run --browser chrome",
+    "component-test":"cypress run --component",
+    "cy:run":"cypress run --headed --no-exit"
   },
   "dependencies": {
     "@emotion/react": "^11.11.1",
