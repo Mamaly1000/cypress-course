@@ -15,10 +15,10 @@ describe.skip("testing examples", () => {
     cy.get("[data-test='intercept-message']").should("contain.text", message);
   });
   // some usefull cypress methods
-  // within()  => scopes all subsequents cypress commands to within an element.useful when working within a particulargroup of elements such as forms
+  //  within() => scopes all subsequents cypress commands to within an element.useful when working within a particulargroup of elements such as forms
   // request() => is a helpful method anytime you need to make an http req within your tests and perform expectations against it.
-  // invoke()  => invoke a function on the previously yielded subject.
-  // its()     => get the properties value on the previously yielded subject.
+  //  invoke() => invoke a function on the previously yielded subject.
+  //     its() => get the properties value on the previously yielded subject.
   it.skip("test grudge app", () => {
     cy.get("[data-test='grudge-app']").as("app");
     cy.get("[data-test='grudge-list']").as("grudge-list");
